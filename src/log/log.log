@@ -1,0 +1,62 @@
+2022-06-12 22:15:58 TRACE Runner:14 - Запущен метод main()
+2022-06-12 22:15:58 TRACE ApplicationContext:19 - Контекст создан
+2022-06-12 22:15:58 TRACE JavaConfiguration:15 - Конфигурационный файл создан
+2022-06-12 22:15:58 TRACE JavaBeanConfigurator:20 - Бин конфигуратор создан. Переданы:
+Пакет для сканирования: com.vuzov.container
+Мапа с установками: {interface com.vuzov.container.service.interfaces.PaymentSystem=class com.vuzov.container.service.impl.CashPaymentSystem}
+2022-06-12 22:15:58 TRACE BeanFactory:31 - Фабрика бинов создана
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для class com.vuzov.container.service.GetTaxi
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для class com.vuzov.container.service.GetTaxi
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.service.GetTaxi
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для interface com.vuzov.container.service.interfaces.CostCalculationByDistance
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для interface com.vuzov.container.service.interfaces.CostCalculationByDistance
+2022-06-12 22:15:58 INFO  BeanFactory:38 - Фбрика просит бин-конфигуратор найти имплементацию для interface com.vuzov.container.service.interfaces.CostCalculationByDistance
+2022-06-12 22:15:58 INFO  JavaBeanConfigurator:26 - Конфигуратор вычисляет имеются ли установки в конфигурационном файле и, если нет, то сканирует пакет и ищет имплементацию
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.service.impl.TaxiFare
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.service.impl.TaxiFare помечен аннотацией Service
+2022-06-12 22:15:58 INFO  BeanFactory:52 - Внедряем зависимость в поле costCalculationByDistance, помеченное аннотацией Autowired по его типу interface com.vuzov.container.service.interfaces.CostCalculationByDistance
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для interface com.vuzov.container.service.interfaces.SearchSystem
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для interface com.vuzov.container.service.interfaces.SearchSystem
+2022-06-12 22:15:58 INFO  BeanFactory:38 - Фбрика просит бин-конфигуратор найти имплементацию для interface com.vuzov.container.service.interfaces.SearchSystem
+2022-06-12 22:15:58 INFO  JavaBeanConfigurator:26 - Конфигуратор вычисляет имеются ли установки в конфигурационном файле и, если нет, то сканирует пакет и ищет имплементацию
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.service.impl.SearchNearestTaxi
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.service.impl.SearchNearestTaxi помечен аннотацией Service
+2022-06-12 22:15:58 INFO  BeanFactory:52 - Внедряем зависимость в поле searchSystem, помеченное аннотацией Autowired по его типу interface com.vuzov.container.service.interfaces.SearchSystem
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для interface com.vuzov.container.service.interfaces.PaymentSystem
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для interface com.vuzov.container.service.interfaces.PaymentSystem
+2022-06-12 22:15:58 INFO  BeanFactory:38 - Фбрика просит бин-конфигуратор найти имплементацию для interface com.vuzov.container.service.interfaces.PaymentSystem
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.service.impl.CashPaymentSystem
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.service.impl.CashPaymentSystem помечен аннотацией Service
+2022-06-12 22:15:58 INFO  BeanFactory:52 - Внедряем зависимость в поле paymentSystem, помеченное аннотацией Autowired по его типу interface com.vuzov.container.service.interfaces.PaymentSystem
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для interface com.vuzov.container.service.interfaces.NotificationSystem
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для interface com.vuzov.container.service.interfaces.NotificationSystem
+2022-06-12 22:15:58 INFO  BeanFactory:38 - Фбрика просит бин-конфигуратор найти имплементацию для interface com.vuzov.container.service.interfaces.NotificationSystem
+2022-06-12 22:15:58 INFO  JavaBeanConfigurator:26 - Конфигуратор вычисляет имеются ли установки в конфигурационном файле и, если нет, то сканирует пакет и ищет имплементацию
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.service.impl.ClientNotification
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.service.impl.ClientNotification помечен аннотацией Service
+2022-06-12 22:15:58 INFO  BeanFactory:52 - Внедряем зависимость в поле notificationSystem, помеченное аннотацией Autowired по его типу interface com.vuzov.container.service.interfaces.NotificationSystem
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.service.GetTaxi помечен аннотацией Service
+2022-06-12 22:15:58 TRACE GetTaxi:28 - Вызван метод get()
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для class com.vuzov.container.LogTicker
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для class com.vuzov.container.LogTicker
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.LogTicker
+2022-06-12 22:15:58 INFO  ApplicationContext:30 - Запрошен бин из контекста для class com.vuzov.container.CurrentTimeService
+2022-06-12 22:15:58 INFO  BeanFactory:35 - Контекст просит фабрику создать бин для class com.vuzov.container.CurrentTimeService
+2022-06-12 22:15:58 INFO  BeanFactory:43 - Фабрика создаёт бин для class com.vuzov.container.CurrentTimeService
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.CurrentTimeService помечен аннотацией Service
+2022-06-12 22:15:58 INFO  BeanFactory:65 - Внедряем зависимость в поле currentTimeService по типу параметра из конструктора class com.vuzov.container.CurrentTimeService, помеченного аннотацией Autowired
+2022-06-12 22:15:58 INFO  ApplicationContext:39 - Контекст поместил бин в cache (beanMap), т.к. class com.vuzov.container.LogTicker помечен аннотацией Service
+2022-06-12 22:15:58 INFO  ApplicationContext:45 - Метод tick из class com.vuzov.container.LogTicker помечен аннотацией Scheduled. Контекст создает Scheduller.
+2022-06-12 22:15:58 INFO  Scheduller:18 - Создан class com.vuzov.container.schedule.Scheduller для class com.vuzov.container.LogTicker и вызван метод start(). Входящие парамметры аннотации: rate = 5, unit = SECONDS
+2022-06-12 22:15:58 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:15:58 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
+2022-06-12 22:16:03 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:16:03 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
+2022-06-12 22:16:08 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:16:08 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
+2022-06-12 22:16:13 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:16:13 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
+2022-06-12 22:16:18 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:16:18 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
+2022-06-12 22:16:23 TRACE LogTicker:27 - Вызван метод tick()
+2022-06-12 22:16:23 TRACE CurrentTimeService:13 - Вызван метод currentMillis()
