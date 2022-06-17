@@ -24,15 +24,11 @@ class RunnerTest {
     @Test
     void main() {
         GetTaxi getTaxiActual = applicationContext.getBean(GetTaxi.class);
-        GetTaxi getTaxiByStringActual = applicationContext.getBean("GetTaxi");
 
         Assertions.assertInstanceOf(GetTaxi.class, getTaxiActual);
-        Assertions.assertInstanceOf(GetTaxi.class, getTaxiByStringActual);
 
         LogTicker logTickerActual = applicationContext.getBean(LogTicker.class);
-        LogTicker logTickerByStringActual = applicationContext.getBean("LogTicker");
 
         Assertions.assertInstanceOf(LogTicker.class, logTickerActual);
-        Assertions.assertInstanceOf(LogTicker.class, logTickerByStringActual);
     }
 }

@@ -1,23 +1,25 @@
 package com.vuzov.container.configurator;
 
 import org.reflections.Reflections;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class JavaBeanConfigurator implements BeanConfigurator {
 
-    private static final Logger logger = Logger.getLogger(JavaBeanConfigurator.class);
+    private static final Logger logger = LoggerFactory.getLogger(JavaBeanConfigurator.class);
 
     private final Reflections scanner;
     private final Map<Class, Class> interfaceToImplementation;
 
     public JavaBeanConfigurator(String packageToScan, Map<Class, Class> interfaceToImplementation) {
         this.scanner = new Reflections(packageToScan);
-        this.interfaceToImplementation = new ConcurrentHashMap<>(interfaceToImplementation);
-        logger.trace("Бин конфигуратор создан. Переданы:\nПакет для сканирования: " + packageToScan + "\nМапа с установками: " + interfaceToImplementation);
+        this.interfaceToImplementation = new HashMap<>(interfaceToImplementation);
+        logger.trace("Бин конфигуратор создан. Переданы:\nПакет для сканирования: {}\nМапа с установками: {}", packageToScan, interfaceToImplementation);
     }
 
     @Override

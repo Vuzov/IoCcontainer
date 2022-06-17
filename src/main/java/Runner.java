@@ -3,15 +3,18 @@ import com.vuzov.container.context.ApplicationContext;
 import com.vuzov.container.factory.BeanFactory;
 import com.vuzov.container.service.GetTaxi;
 import java.io.IOException;
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class Runner {
 
-    private static final Logger logger = Logger.getLogger(Runner.class);
+    private static final Logger logger = LoggerFactory.getLogger(Runner.class);
 
     public static void main(String[] args) throws IOException {
         logger.trace("Запущен метод main()");
+        // TODO циклическая зависимость
         ApplicationContext applicationContext = new ApplicationContext();
         BeanFactory beanFactory = new BeanFactory(applicationContext);
         applicationContext.setBeanFactory(beanFactory);

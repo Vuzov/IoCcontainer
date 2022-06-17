@@ -3,13 +3,14 @@ package com.vuzov.container.service;
 import com.vuzov.container.annotations.Autowired;
 import com.vuzov.container.annotations.Service;
 import com.vuzov.container.service.interfaces.*;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @Service
 public class GetTaxi {
 
-    Logger logger = Logger.getLogger(GetTaxi.class);
+    Logger logger = LoggerFactory.getLogger(GetTaxi.class);
 
     @Autowired
     private CostCalculationByDistance costCalculationByDistance;
@@ -23,7 +24,7 @@ public class GetTaxi {
     @Autowired
     private NotificationSystem notificationSystem;
 
-    //TODO дописать логику
+
     public void get() {
         logger.trace("Вызван метод get()");
         costCalculationByDistance.calculate();
