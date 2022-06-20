@@ -14,4 +14,9 @@ public class CurrentTimeService {
         logger.trace("Вызван метод currentMillis()");
         return System.currentTimeMillis();
     }
+
+    @Override
+    public String toString() {
+        return "CurrentTimeService";
+    }
 }

@@ -11,14 +11,14 @@ import java.util.concurrent.TimeUnit;
  * Execute the annotated method with a fixed period between invocations.
  * Exactly one fixedRate() attribute must be specified.
  *
- * {@link Scheduled#rate()} default value 0
+ * {@link Scheduled#rate()} default value -1L
  * {@link Scheduled#unit()} default value TimeUnit.MILLISECONDS
  */
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Scheduled {
 
-    long rate() default 0;
+    long rate() default -1L;
 
     TimeUnit unit() default TimeUnit.MILLISECONDS;
 }

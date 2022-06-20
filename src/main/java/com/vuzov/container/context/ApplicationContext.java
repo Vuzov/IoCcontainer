@@ -1,54 +1,75 @@
 package com.vuzov.container.context;
 
-import com.vuzov.container.annotations.Scheduled;
-import com.vuzov.container.annotations.Service;
+import com.vuzov.container.annotations.*;
+import com.vuzov.container.configurator.*;
+import java.util.*;
 import com.vuzov.container.factory.BeanFactory;
-import com.vuzov.container.schedule.Scheduller;
+import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.stream.Collectors;
 
 
 public class ApplicationContext {
 
     private static final Logger logger = LoggerFactory.getLogger(ApplicationContext.class);
 
-    public ApplicationContext() {
-        logger.trace("Контекст создан");
+    private final Reflections scanner;
+    private final BeanFactory beanFactory;
+    private final BeanConfigurator beanConfigurator;
+    private final Map<Class<?>, Object> cache = new HashMap<>();
+
+    public ApplicationContext(String packageToScan, Map<Class, Class> interfaceToImplementation) {
+        logger.trace("Контекст создан. Пакет для сканирования: {}", packageToScan);
+        this.scanner = new Reflections(packageToScan);
+        this.beanFactory = new BeanFactory(this);
+        this.beanConfigurator = new JavaBeanConfigurator(scanner, interfaceToImplementation);
     }
 
-    private BeanFactory beanFactory;
-    private final Map<Class, Object> beanMap = new HashMap<>();
-
-    public void setBeanFactory(BeanFactory beanFactory) {
-        this.beanFactory = beanFactory;
-    }
-
-    public <T> T getBean(Class<T> clazz) {
-        logger.info("Запрошен бин из контекста для {}", clazz);
-        if (beanMap.containsKey(clazz)) {
-            logger.info("Контекст проверил наличие бина в cache (beanMap) и возвратил его для {}", clazz);
-            return (T) beanMap.get(clazz);
-        }
-
-        T bean = beanFactory.getBean(clazz);
-
-        // TODO аннотация Service влияет только на помещение в кэш?
-        if (bean.getClass().isAnnotationPresent(Service.class)) {
-            logger.info("Контекст поместил бин в cache (beanMap), т.к. {} помечен аннотацией Service", bean.getClass());
-            beanMap.put(bean.getClass(), bean);
-        }
-
-        // TODO должна быть возможность без обращения к бину запускать Scheduled-методы (обычно к таким бинам никто не обращается из контекста)
-        for (Method method : bean.getClass().getMethods()) {
-            if (method.isAnnotationPresent(Scheduled.class)) {
-                logger.info("Метод {} из {} помечен аннотацией Scheduled. Контекст создает Scheduller", method.getName(), bean.getClass());
-                new Scheduller().start(bean, method);
+    public void run() {
+        logger.trace("Запущен метод run()");
+        logger.info("Контекст сканирует пакет, ищет сервисы и запускает scheduled методы");
+        Set<Class<?>> typesAnnotatedWithService = scanner.getTypesAnnotatedWith(Service.class);
+        for (Class<?> service : typesAnnotatedWithService) {
+            List<Method> methods = Arrays.stream(service.getDeclaredMethods())
+                    .filter(e -> e.isAnnotationPresent(Scheduled.class))
+                    .collect(Collectors.toList());
+            if (!methods.isEmpty()) {
+                if (!cache.containsKey(service)) {
+                    Object bean = beanFactory.createBean(service);
+                    cache.put(service, bean);
+                }
             }
         }
+    }
 
+    public <T> T getBean(Class<T> type) {
+        logger.info("У контекста запрошен бин для {}", type.getSimpleName());
+        Class<T> implClass = getImplementationClass(type);
+        if (cache.containsKey(implClass)) {
+            logger.info("Контекст вернул бин из кэша для {}", type.getSimpleName());
+            return (T) cache.get(implClass);
+        }
+        T bean = beanFactory.createBean(implClass);
+        if (bean.getClass().isAnnotationPresent(Service.class)) {
+            cache.put(implClass, bean);
+        }
         return bean;
+    }
+
+    private <T> Class<T> getImplementationClass(Class<T> type) {
+        if (type.isInterface()) {
+            logger.info("Контекст просит бин-конфигуратор найти имплементацию для {}", type.getSimpleName());
+            type = (Class<T>) beanConfigurator.getImplementationClass(type);
+        }
+        return type;
+    }
+
+    //for test
+    public void getCache() {
+        for (Class<?> clazz : cache.keySet()) {
+            System.out.println(clazz.getSimpleName());
+        }
     }
 }

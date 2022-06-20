@@ -36,6 +36,7 @@ public class GetTaxi {
     }
 
     private void drive() {
+        logger.trace("Вызван метод drive()");
         System.out.println("Мы едем, едем, едем в далекие края...");
     }
 }
