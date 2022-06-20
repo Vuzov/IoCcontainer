@@ -5,9 +5,8 @@ import com.vuzov.container.service.interfaces.PaymentSystem;
 
 
 @Service
-public class CashPaymentSystem implements PaymentSystem {
+public class CashPaymentSystem {
 
-    @Override
     public void pay() {
         System.out.println("Поездка подтверждена. Оплата наличными водителю. Пожалуйста, ожидайте машину.");
     }

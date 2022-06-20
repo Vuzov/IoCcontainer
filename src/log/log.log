@@ -1,47 +1,49 @@
-2022-06-20 12:32:47 TRACE Runner:16 - Запущен метод main()
-2022-06-20 12:32:47 TRACE ApplicationContext:24 - Контекст создан. Пакет для сканирования: 
-2022-06-20 12:32:47 INFO Reflections:198 - going to scan these urls: [file:/C:/Users/IdeaProjects/IoCcontainer/target/classes/]
-2022-06-20 12:32:47 INFO  Reflections:239 - Reflections took 155 ms to scan 1 urls, producing 9 keys and 20 values 
-2022-06-20 12:32:47 TRACE BeanFactory:25 - Фабрика бинов создана
-2022-06-20 12:32:47 TRACE JavaBeanConfigurator:20 - Бин конфигуратор создан
-2022-06-20 12:32:47 TRACE ApplicationContext:31 - Запущен метод run()
-2022-06-20 12:32:47 INFO  ApplicationContext:32 - Контекст сканирует пакет, ищет сервисы и запускает scheduled методы
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для LogTicker
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для CurrentTimeService
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для CurrentTimeService
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в CurrentTimeService
-2022-06-20 12:32:47 INFO  LogTicker:25 - Внедрение зависимости через конструктор в CurrentTimeService
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в LogTicker
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для GetTaxi
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для GetTaxi
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в GetTaxi
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для CostCalculationByDistance
-2022-06-20 12:32:47 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для CostCalculationByDistance
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для CostCalculationByDistance
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для CostCalculationByDistance
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для TaxiFare
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в TaxiFare
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для SearchSystem
-2022-06-20 12:32:47 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для SearchSystem
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для SearchSystem
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для SearchSystem
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для SearchNearestTaxi
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в SearchNearestTaxi
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для PaymentSystem
-2022-06-20 12:32:47 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для PaymentSystem
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для CashPaymentSystem
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в CashPaymentSystem
-2022-06-20 12:32:47 INFO  ApplicationContext:48 - У контекста запрошен бин для NotificationSystem
-2022-06-20 12:32:47 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для NotificationSystem
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для NotificationSystem
-2022-06-20 12:32:47 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для NotificationSystem
-2022-06-20 12:32:47 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для ClientNotification
-2022-06-20 12:32:47 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в ClientNotification
-2022-06-20 12:32:47 TRACE GetTaxi:29 - Вызван метод get()
-2022-06-20 12:32:47 TRACE GetTaxi:39 - Вызван метод drive()
-2022-06-20 12:32:48 INFO  ScheduledAnnotationBeanConfigurator:38 - Запущен метод tick, помеченный аннотацией @Scheduled
-2022-06-20 12:32:48 TRACE LogTicker:31 - Вызван метод tick()
-2022-06-20 12:32:48 TRACE CurrentTimeService:14 - Вызван метод currentMillis()
-2022-06-20 12:32:53 INFO  ScheduledAnnotationBeanConfigurator:38 - Запущен метод tick, помеченный аннотацией @Scheduled
-2022-06-20 12:32:53 TRACE LogTicker:31 - Вызван метод tick()
-2022-06-20 12:32:53 TRACE CurrentTimeService:14 - Вызван метод currentMillis()
+2022-06-20 13:39:13 TRACE Runner:12 - Запущен метод main()
+2022-06-20 13:39:13 TRACE ApplicationContext:24 - Контекст создан. Пакет для сканирования: 
+2022-06-20 13:39:13 DEBUG Reflections:198 - going to scan these urls: [file:/C:/Users/%d0%94%d0%b5%d0%bd%d0%b8%d1%81%20%d0%92%d1%83%d0%b7%d0%be%d0%b2/IdeaProjects/IoCcontainer/target/classes/]
+2022-06-20 13:39:14 INFO  Reflections:239 - Reflections took 156 ms to scan 1 urls, producing 9 keys and 19 values 
+2022-06-20 13:39:14 TRACE BeanFactory:25 - Фабрика бинов создана
+2022-06-20 13:39:14 TRACE JavaBeanConfigurator:20 - Бин конфигуратор создан
+2022-06-20 13:39:14 TRACE ApplicationContext:31 - Запущен метод run()
+2022-06-20 13:39:14 INFO  ApplicationContext:32 - Контекст сканирует пакет, ищет сервисы и запускает scheduled методы
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для LogTicker
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для CurrentTimeService
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для CurrentTimeService
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в CurrentTimeService
+2022-06-20 13:39:14 INFO  LogTicker:25 - Внедрение зависимости через конструктор в CurrentTimeService
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в LogTicker
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для GetTaxi
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для GetTaxi
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в GetTaxi
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для CostCalculationByDistance
+2022-06-20 13:39:14 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для CostCalculationByDistance
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для CostCalculationByDistance
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для CostCalculationByDistance
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для TaxiFare
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в TaxiFare
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для SearchSystem
+2022-06-20 13:39:14 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для SearchSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для SearchSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для SearchSystem
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для SearchNearestTaxi
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в SearchNearestTaxi
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для PaymentSystem
+2022-06-20 13:39:14 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для PaymentSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для PaymentSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для PaymentSystem
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для CardPaymentSystem
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в CardPaymentSystem
+2022-06-20 13:39:14 INFO  ApplicationContext:48 - У контекста запрошен бин для NotificationSystem
+2022-06-20 13:39:14 INFO  ApplicationContext:63 - Контекст просит бин-конфигуратор найти имплементацию для NotificationSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:28 - Конфигуратор ищет имплементацию для NotificationSystem
+2022-06-20 13:39:14 INFO  JavaBeanConfigurator:38 - Бин-конфигуратор вернул имплементацию для NotificationSystem
+2022-06-20 13:39:14 INFO  BeanFactory:32 - Контекст просит фабрику создать бин для ClientNotification
+2022-06-20 13:39:14 INFO  AutowiredAnnotationBeanConfigurator:19 - Фабрика внедряет зависимости в ClientNotification
+2022-06-20 13:39:14 TRACE GetTaxi:29 - Вызван метод get()
+2022-06-20 13:39:14 TRACE GetTaxi:39 - Вызван метод drive()
+2022-06-20 13:39:15 INFO  ScheduledAnnotationBeanConfigurator:38 - Запущен метод tick, помеченный аннотацией @Scheduled
+2022-06-20 13:39:15 TRACE LogTicker:31 - Вызван метод tick()
+2022-06-20 13:39:15 TRACE CurrentTimeService:14 - Вызван метод currentMillis()
+2022-06-20 13:39:20 INFO  ScheduledAnnotationBeanConfigurator:38 - Запущен метод tick, помеченный аннотацией @Scheduled
+2022-06-20 13:39:20 TRACE LogTicker:31 - Вызван метод tick()
+2022-06-20 13:39:20 TRACE CurrentTimeService:14 - Вызван метод currentMillis()

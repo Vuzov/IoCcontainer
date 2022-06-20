@@ -16,10 +16,10 @@ public class JavaBeanConfigurator implements BeanConfigurator {
     private final Reflections scanner;
     private final Map<Class, Class> interfaceToImplementation;
 
-    public JavaBeanConfigurator(Reflections scanner, Map<Class, Class> interfaceToImplementation) {
+    public JavaBeanConfigurator(Reflections scanner) {
         logger.trace("Бин конфигуратор создан");
         this.scanner = scanner;
-        this.interfaceToImplementation = new HashMap<>(interfaceToImplementation);
+        this.interfaceToImplementation = new HashMap<>();
     }
 
     @Override

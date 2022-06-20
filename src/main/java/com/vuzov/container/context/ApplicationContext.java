@@ -20,11 +20,11 @@ public class ApplicationContext {
     private final BeanConfigurator beanConfigurator;
     private final Map<Class<?>, Object> cache = new HashMap<>();
 
-    public ApplicationContext(String packageToScan, Map<Class, Class> interfaceToImplementation) {
+    public ApplicationContext(String packageToScan) {
         logger.trace("Контекст создан. Пакет для сканирования: {}", packageToScan);
         this.scanner = new Reflections(packageToScan);
         this.beanFactory = new BeanFactory(this);
-        this.beanConfigurator = new JavaBeanConfigurator(scanner, interfaceToImplementation);
+        this.beanConfigurator = new JavaBeanConfigurator(scanner);
     }
 
     public void run() {
